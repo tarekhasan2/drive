@@ -31,7 +31,12 @@ def google_drive():
 	SCOPES 				= ['https://www.googleapis.com/auth/drive']
 	drive_service 		= Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 	
-	folder_id 	= '1fGZpA7FzlQj6yy5LlJlw2PMpTuFCq2KV'
+	folder_id 	= ''
+	'''This will the folder id of the folder where all the videos are in. You will get the folder id in folder link.
+		Like this, folder link: https://drive.google.com/drive/folders/1fGZpA7FzlQj6yy5LlJlw2PMpTuFekyKV
+		folder_id = 1fGZpA7FzlQj6yy5LlJlw2PMpTuFekyKV
+		put the folder_id in the field.
+	'''
 	query 		= f"parents = '{folder_id}'"
 	response 	= drive_service.files().list(q = query).execute()
 	
